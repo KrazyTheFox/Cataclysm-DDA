@@ -4008,9 +4008,8 @@ int player::sight_range( int light_level ) const
      * log(LIGHT_AMBIENT_LOW / light_level) <= LIGHT_TRANSPARENCY_OPEN_AIR * distance
      * log(LIGHT_AMBIENT_LOW / light_level) * (1 / LIGHT_TRANSPARENCY_OPEN_AIR) <= distance
      */
-    int range = int( -log( get_vision_threshold( int( g->m.ambient_light_at( pos() ) ) ) /
-                           ( float )light_level ) *
-                     ( 1.0 / LIGHT_TRANSPARENCY_OPEN_AIR ) );
+    int range = int( -log( get_vision_threshold( int(g->m.ambient_light_at(pos())), pos().z  ) / (float)light_level ) *
+        (1.0 / LIGHT_TRANSPARENCY_OPEN_AIR));
     // int range = log(light_level * LIGHT_AMBIENT_LOW) / LIGHT_TRANSPARENCY_OPEN_AIR;
 
     // Clamp to [1, sight_max].

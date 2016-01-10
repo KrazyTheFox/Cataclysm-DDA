@@ -5683,11 +5683,11 @@ void map::debug()
  getch();
 }
 
-void map::update_visibility_cache( const int zlev ) {
-    visibility_variables_cache.variables_set = true; // Not used yet
-    visibility_variables_cache.g_light_level = (int)g->light_level( zlev );
-    visibility_variables_cache.vision_threshold = g->u.get_vision_threshold(
-        get_cache_ref(g->u.posz()).lm[g->u.posx()][g->u.posy()] );
+void map::update_visibility_cache( visibility_variables &cache, const int zlev ) {
+    cache.variables_set = true; // Not used yet
+    cache.g_light_level = (int)g->light_level( zlev );
+    cache.vision_threshold = g->u.get_vision_threshold(
+        get_cache_ref(g->u.posz()).lm[g->u.posx()][g->u.posy()], zlev );
 
     visibility_variables_cache.u_clairvoyance = g->u.clairvoyance();
     visibility_variables_cache.u_sight_impaired = g->u.sight_impaired();

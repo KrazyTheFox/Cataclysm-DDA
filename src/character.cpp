@@ -466,7 +466,7 @@ void Character::recalc_sight_limits()
     }
 }
 
-float Character::get_vision_threshold(int light_level) const {
+float Character::get_vision_threshold(int light_level, int z_level) const {
     // Bail out in extremely common case where character hs no special vision mode or
     // it's too bright for nightvision to work.
     if( vision_mode_cache.none() || light_level > LIGHT_AMBIENT_LIT ) {
@@ -474,8 +474,8 @@ float Character::get_vision_threshold(int light_level) const {
     }
     // As light_level goes from LIGHT_AMBIENT_MINIMAL to LIGHT_AMBIENT_LIT,
     // dimming goes from 1.0 to 2.0.
-    const float dimming_from_light = 1.0 + (((float)light_level - LIGHT_AMBIENT_MINIMAL) /
-                                            (LIGHT_AMBIENT_LIT - LIGHT_AMBIENT_MINIMAL));
+    const float dimming_from_light = std::max(1.0, 1.0 + (((float)light_level - g->natural_light_level(z_level)) /
+                                            (LIGHT_AMBIENT_LIT - g->natural_light_level(z_level))));
     float threshold = LIGHT_AMBIENT_LOW;
 
     /**
@@ -500,7 +500,7 @@ float Character::get_vision_threshold(int light_level) const {
         }
     } else if( vision_mode_cache[ELFA_VISION] ) {
         // Range 7.
-        threshold = 2.65;
+        threshold = 2.55;
     } else if( vision_mode_cache[NIGHTVISION_2] || vision_mode_cache[FELINE_VISION] ||
                vision_mode_cache[URSINE_VISION] ) {
         if( vision_mode_cache[BIRD_EYE] ) {
@@ -508,7 +508,7 @@ float Character::get_vision_threshold(int light_level) const {
             threshold = 2.78;
         } else {
             // Range 4.
-            threshold = 2.9;
+            threshold = 2.8;
         }
     } else if( vision_mode_cache[NIGHTVISION_1] ) {
         if( vision_mode_cache[BIRD_EYE] ) {
@@ -516,7 +516,7 @@ float Character::get_vision_threshold(int light_level) const {
             threshold = 3.2;
         } else {
             // Range 2.
-            threshold = 3.35;
+            threshold = 3.0;
         }
     }
     return std::min( (float)LIGHT_AMBIENT_LOW, threshold * dimming_from_light );

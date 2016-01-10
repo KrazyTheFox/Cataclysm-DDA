@@ -441,7 +441,7 @@ bool map::pl_sees( const tripoint &t, const int max_range ) const
     const auto &map_cache = get_cache_ref( t.z );
     return map_cache.seen_cache[t.x][t.y] > LIGHT_TRANSPARENCY_SOLID + 0.1 &&
         ( map_cache.seen_cache[t.x][t.y] * map_cache.lm[t.x][t.y] >
-          g->u.get_vision_threshold( map_cache.lm[g->u.posx()][g->u.posy()] ) ||
+          g->u.get_vision_threshold( map_cache.lm[g->u.posx()][g->u.posy()], t.z ) ||
           map_cache.sm[t.x][t.y] > 0.0 );
 }
 
