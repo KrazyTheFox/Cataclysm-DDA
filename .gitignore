@@ -1,3 +1,15 @@
+# linked test executable
+tests/line_test
+tests/map_iterator_test
+tests/shadowcasting_test
+# static library used to link the test executable
+cataclysm.a
+
+# coredumps
+*.core
+
+# sublime-text workspace
+*.sublime-workspace
 tests/cata_test
 cataclysm
 cataclysm-tiles
@@ -128,3 +140,4 @@ Cataclysm.nam
 
 # Distribution script results
 msvc-full-features/distribution
+cataclysm.a
