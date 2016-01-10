@@ -4,6 +4,8 @@ cmake_minimum_required(VERSION 2.8.12)
 SET(CATACLYSM_DDA_SRCS "")
 
 SET(CATACLYSM_DDA_SOURCES
+    ${CMAKE_SOURCE_DIR}/src/mattack_actors.cpp
+    ${CMAKE_SOURCE_DIR}/src/drawing_primitives.cpp
     ${CMAKE_SOURCE_DIR}/src/veh_interact.cpp
     ${CMAKE_SOURCE_DIR}/src/mondeath.cpp
     ${CMAKE_SOURCE_DIR}/src/path_info.cpp
@@ -179,6 +181,8 @@ SET(CATACLYSM_DDA_SOURCES
 )
 
 SET (CATACLYSM_DDA_HEADERS
+    ${CMAKE_SOURCE_DIR}/src/mattack_actors.h
+    ${CMAKE_SOURCE_DIR}/src/drawing_primitives.h
     ${CMAKE_SOURCE_DIR}/src/weather.h
     ${CMAKE_SOURCE_DIR}/src/iuse_software.h
     ${CMAKE_SOURCE_DIR}/src/catacurse.h

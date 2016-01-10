@@ -474,8 +474,8 @@ float Character::get_vision_threshold(int light_level, int z_level) const {
     }
     // As light_level goes from LIGHT_AMBIENT_MINIMAL to LIGHT_AMBIENT_LIT,
     // dimming goes from 1.0 to 2.0.
-    const float dimming_from_light = std::max(1.0, 1.0 + (((float)light_level - g->natural_light_level(z_level)) /
-                                            (LIGHT_AMBIENT_LIT - g->natural_light_level(z_level))));
+    //const float dimming_from_light = std::max(1.0, 1.0 + (((float)light_level - g->natural_light_level(z_level)) /
+    //                                        (LIGHT_AMBIENT_LIT - g->natural_light_level(z_level))));
     float threshold = LIGHT_AMBIENT_LOW;
 
     /**
@@ -519,7 +519,7 @@ float Character::get_vision_threshold(int light_level, int z_level) const {
             threshold = 3.0;
         }
     }
-    return std::min( (float)LIGHT_AMBIENT_LOW, threshold * dimming_from_light );
+    return threshold;//std::min( (float)LIGHT_AMBIENT_LOW, threshold * dimming_from_light );
 }
 
 bool Character::has_bionic(const std::string & b) const
