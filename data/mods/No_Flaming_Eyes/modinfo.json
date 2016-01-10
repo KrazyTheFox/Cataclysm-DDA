@@ -1,0 +1,16 @@
+[
+{
+    "type": "MOD_INFO",
+    "mod-type": "SUPPLEMENTAL",
+    "ident": "No_Flaming_Eyes",
+    "name": "No Flaming Eyes",
+    "author": "KrazyTheFox",
+    "description": "Removes all flaming eyes from the game.",
+    "path": "modinfo.json"
+},{
+    "type": "MONSTER_BLACKLIST",
+    "monsters": [
+        "mon_flaming_eye"
+    ]
+}
+]
