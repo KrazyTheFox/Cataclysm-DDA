@@ -31,7 +31,7 @@
 // only can wear a maximum of two of any type of clothing
 #define MAX_WORN_PER_TYPE 2
 
-#define MAPSIZE 11
+#define MAPSIZE 18
 
 // SEEX/SEEY define the size of a nonant, or grid.
 // All map segments will need to be at least this wide.
