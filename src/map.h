@@ -110,6 +110,7 @@ struct visibility_variables {
     bool variables_set; // Is this struct initialized for current z-level
     // cached values for map visibility calculations
     int g_light_level;
+    float g_ambient_light;
     int u_clairvoyance;
     bool u_sight_impaired;
     bool u_is_boomered;

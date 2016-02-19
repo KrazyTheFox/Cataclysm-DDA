@@ -1,0 +1,8 @@
+[
+	{
+        "type" : "ammunition_type",
+        "id" : "380",
+        "name" : ".380",
+        "default" : ".380"
+    }
+]

@@ -1515,6 +1515,43 @@
         }
     },{
         "type" : "vehicle_part",
+        "id" : "headlight",
+        "name" : "head light",
+        "symbol" : "*",
+        "color" : "white",
+        "broken_symbol" : "*",
+        "broken_color" : "white",
+        "damage_modifier" : 10,
+        "durability" : 20,
+        "folded_volume": 1,
+        "epower" : -187,
+        "bonus" : 1500,
+        "item" : "flashlight",
+        "difficulty" : 1,
+        "flags" : ["CONE_LIGHT", "TOOL_SCREWDRIVER", "FOLDABLE"],
+        "breaks_into" : [
+            {"item": "scrap", "count": [0, 2]}
+        ]
+    },{
+        "type" : "vehicle_part",
+        "id" : "headlight_reinforced",
+        "name" : "reinforced head light",
+        "symbol" : "*",
+        "color" : "light_blue",
+        "broken_symbol" : "*",
+        "broken_color" : "white",
+        "damage_modifier" : 10,
+        "durability" : 80,
+        "epower" : -187,
+        "bonus" : 1500,
+        "item" : "headlight_reinforced",
+        "difficulty" : 1,
+        "flags" : ["CONE_LIGHT", "TOOL_SCREWDRIVER"],
+        "breaks_into" : [
+            {"item": "scrap", "count": [0, 2]}
+        ]
+    },{
+        "type" : "vehicle_part",
         "id" : "reinforced_windshield",
         "name" : "reinforced windshield",
         "symbol" : "\"",

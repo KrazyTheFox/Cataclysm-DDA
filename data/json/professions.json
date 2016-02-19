@@ -5112,5 +5112,31 @@
                 "boy_shorts"
             ]
         }
+    },
+    {
+        "type": "profession",
+        "ident": "photographer",
+        "name": "Photographer",
+        "description": "!",
+        "points": 8,
+        "traits": [
+            "EAGLEEYED",
+            "STRONGBACK",
+            "PACKMULE",
+            "NIGHTVISION",
+            "OUTDOORSMAN"
+        ],
+        "items": {
+            "both" : [
+                "longshirt",
+                "jeans",
+                "socks",
+                "sneakers",
+                "backpack",
+                "camera",
+                "camera_pro",
+                "mobile_memory_card"
+            ]
+        }
     }
 ]

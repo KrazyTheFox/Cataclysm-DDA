@@ -5683,11 +5683,11 @@ void map::debug()
  getch();
 }
 
-void map::update_visibility_cache( visibility_variables &cache, const int zlev ) {
-    cache.variables_set = true; // Not used yet
-    cache.g_light_level = (int)g->light_level( zlev );
-    cache.vision_threshold = g->u.get_vision_threshold(
-        get_cache_ref(g->u.posz()).lm[g->u.posx()][g->u.posy()], zlev );
+void map::update_visibility_cache(const int zlev ) {
+    visibility_variables_cache.variables_set = true; // Not used yet
+    visibility_variables_cache.g_light_level = (int)g->light_level( zlev );
+    visibility_variables_cache.g_ambient_light = g->natural_light_level( g->u.posz() );
+    visibility_variables_cache.vision_threshold = g->u.get_vision_threshold(get_cache_ref(g->u.posz()).lm[g->u.posx()][g->u.posy()], zlev );
 
     visibility_variables_cache.u_clairvoyance = g->u.clairvoyance();
     visibility_variables_cache.u_sight_impaired = g->u.sight_impaired();
@@ -5736,6 +5736,7 @@ lit_level map::apparent_light_at( const tripoint &p, const visibility_variables 
     const auto &map_cache = get_cache_ref(p.z);
     bool obstructed = map_cache.seen_cache[p.x][p.y] <= LIGHT_TRANSPARENCY_SOLID + 0.1;
     const float apparent_light = map_cache.seen_cache[p.x][p.y] * map_cache.lm[p.x][p.y];
+    const float light_thresh = map_cache.lm[p.x][p.y];
 
     // Unimpaired range is an override to strictly limit vision range based on various conditions,
     // but the player can still see light sources.
@@ -5767,7 +5768,7 @@ lit_level map::apparent_light_at( const tripoint &p, const visibility_variables 
     if( apparent_light > LIGHT_AMBIENT_LIT ) {
         return LL_LIT;
     }
-    if( apparent_light > cache.vision_threshold ) {
+    if( apparent_light > cache.vision_threshold || (light_thresh > cache.vision_threshold && light_thresh > cache.g_ambient_light)) {
         return LL_LOW;
     } else {
         return LL_BLANK;

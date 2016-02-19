@@ -1,0 +1,40 @@
+{
+        "type": "profession",
+        "ident": "hybrid",
+        "name": "Mutant Hybrid",
+        "description": "You were swept away on the emergency table to save your life. But the term life for them is the term horror for you. The threat of going feral looms above you. But you survived, covered in blood and black ooze, but most surely alive",
+        "points": 4,
+        "traits": ["TOUGH2","SMELLY2", "NIGHTVISION3", "FEL_EYE", "INFRARED", "REGEN", "FELINE_FUR", "CHITIN2", "QUILLS", "TALONS", "RADIOGENIC", "PHEROMONE_INSECT", "PHEROMONE_MAMMAL", "DISIMMUNE", "POISONOUS2", "PADDED_FEET", "RAP_TALONS", "SABER_TEETH", "ANTENNAE", "FLEET2", "TAIL_CLUB", "PAINREC3", "MANDIBLES", "FELINE_EARS", "WHISKERS", "FORKED_TONGUE", "MOUTH_FLAPS", "VOMITOUS", "HUNGER2", "TROGLO2", "RADIOACTIVE1", "ARM_FEATHERS"],
+        "items": {
+            "both": [
+			"footrags",
+			"gloves_wraps",
+			"jacket_tactical",
+			"tactical_pants",
+			"hat_barter"
+            ],
+            "male": [
+                "briefs"
+            ],
+            "female": [
+                "bra",
+                "panties"
+            ]
+        },
+        "skills": [
+            {
+                "level": 3,
+                "name": "gun"
+            },
+            {
+                "level": 3,
+                "name": "pistol"
+            }
+        ],
+        "addictions": [
+            {
+                "intensity": 10,
+                "type": "nicotine"
+            }
+        ]
+}
