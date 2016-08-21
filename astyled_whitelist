@@ -94,6 +94,7 @@ src/craft_command.h
 src/crafting_gui.h
 src/creature_tracker.h
 src/cursesdef.h
+src/savegame.cpp
 src/damage.h
 src/debug.h
 src/dependency_tree.h

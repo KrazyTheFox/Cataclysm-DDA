@@ -466,7 +466,7 @@ void Character::recalc_sight_limits()
     }
 }
 
-float Character::get_vision_threshold(int light_level, int z_level) const {
+float Character::get_vision_threshold(int light_level) const {
     // Bail out in extremely common case where character hs no special vision mode or
     // it's too bright for nightvision to work.
     if( vision_mode_cache.none() || light_level > LIGHT_AMBIENT_LIT ) {
