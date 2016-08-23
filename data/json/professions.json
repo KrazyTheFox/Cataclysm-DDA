@@ -873,7 +873,7 @@
             "type": "profession",
             "ident": "bio_sur",
             "name": "Bionic Survivalist",
-            "description": "Mainly from paranoia, you augmented yourself, got some training and gear to go inawoods incase anything went down, well it did.  Now that civilization has fallen, the woods are your new home.", 
+            "description": "Mainly from paranoia, you augmented yourself, got some training and gear to go inawoods incase anything went down, well it did.  Now that civilization has fallen, the woods are your new home.",
             "points": 10,
             "skills": [
             {
@@ -5136,6 +5136,47 @@
                 "camera",
                 "camera_pro",
                 "mobile_memory_card"
+            ]
+        }
+    },
+    {
+        "type": "profession",
+        "ident": "tour_guide",
+        "name": "Tour Guide",
+        "description": "It was your first day on the job when your tour group turned on you.  Luckily, one of the new museum pieces in the back had recently been restored to working condition.  Unfortunately, there were only a couple rounds for it, too.",
+        "points": 2,
+        "traits": [
+            "GOODCARDIO",
+            "GOODMEMORY"
+        ],
+        "skills": [
+            {
+                "level": 1,
+                "name": "speech"
+            }
+        ],
+        "items": {
+            "both" : [
+                "undershirt",
+                "polo_shirt",
+                "pants",
+                "socks",
+                "flyer",
+                "flyer",
+                "flyer",
+                "flyer",
+                "flyer",
+                "rifle_flintlock",
+                "flintlock_ammo"
+            ],
+            "male": [
+                "briefs",
+                "dress_shoes"
+            ],
+            "female": [
+                "sports_bra",
+                "boy_shorts",
+                "heels"
             ]
         }
     }
