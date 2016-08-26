@@ -1132,12 +1132,12 @@ void options_manager::init()
 
     add("TERMINAL_X", "graphics", _("Terminal width"),
         _("Set the size of the terminal along the X axis. Requires restart."),
-        80, 300, 80, COPT_POSIX_CURSES_HIDE
+        80, 400, 80, COPT_POSIX_CURSES_HIDE
         );
 
     add("TERMINAL_Y", "graphics", _("Terminal height"),
         _("Set the size of the terminal along the Y axis. Requires restart."),
-        24, 187, 24, COPT_POSIX_CURSES_HIDE
+        24, 250, 24, COPT_POSIX_CURSES_HIDE
         );
 
     mOptionsSort["graphics"]++;
