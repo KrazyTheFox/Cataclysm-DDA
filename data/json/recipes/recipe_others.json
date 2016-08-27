@@ -2371,6 +2371,39 @@
   ]
 },{
   "type" : "recipe",
+  "result": "wheel_caster",
+  "category": "CC_OTHER",
+  "subcategory": "CSC_OTHER_PARTS",
+  "skill_used": "fabrication",
+  "difficulty": 7,
+  "time": 60000,
+  "reversible": true,
+  "autolearn": true,
+  "qualities":[
+    {"id":"HAMMER","level":2,"amount":1},
+    {"id":"SAW_M","level":1,"amount":1},
+    { "id" : "GLARE", "level" : 2 }
+  ], "tools": [
+    [
+      [ "welder", 40 ],
+      [ "oxy_torch", 8 ],
+      [ "welder_crude", 60 ],
+      [ "toolset", 60 ]
+    ]
+  ],
+  "components": [
+    [
+      [ "pipe", 2 ]
+    ],
+    [
+      [ "steel_chunk", 4 ]
+    ],
+    [
+      [ "plastic_chunk", 4 ]
+    ]
+  ]
+},{
+  "type" : "recipe",
   "result": "hand_rims",
   "category": "CC_OTHER",
   "subcategory": "CSC_OTHER_PARTS",
